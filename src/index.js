@@ -1,11 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+
 function App() {
   return (
     <div>
-      <h1>Hi Cat!</h1>
+      <Header />
       <Meal />
+      <Footer />
     </div>
   );
 }
@@ -18,7 +22,7 @@ function Meal() {
         alt="mealImage"
       />
       <h1>Toad In The Hole</h1>
-      <p>
+      <p style={{ whiteSpace: "pre-wrap" }}>
         {`Preheat the oven to 200°C/fan180°C/gas 6. fry sausages in a non-stick
         pan until browned.\r\nDrizzle vegetable oil in a 30cm x 25cm x 6cm deep
         roasting tray and heat in the oven for 5 minutes.\r\nPut the plain flour
