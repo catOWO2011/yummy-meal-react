@@ -1,0 +1,113 @@
+.category-board-grid {
+  display: grid;
+  grid-template-areas:
+    "a a b"
+    "a a c"
+    "d e c"
+    "f g g"
+    "f g g"
+    "h h i"
+    "h h i"
+    "j k l"
+    "n m m"
+    "n m m";
+  grid-gap: 16px;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+#C1 {
+  grid-area: a;
+}
+
+#C2 {
+  grid-area: b;
+}
+
+#C3 {
+  grid-area: c;
+}
+
+#C4 {
+  grid-area: d;
+}
+
+#C5 {
+  grid-area: e;
+}
+
+#C6 {
+  grid-area: f;
+}
+
+#C7 {
+  grid-area: g;
+}
+
+#C8 {
+  grid-area: h;
+}
+
+#C9 {
+  grid-area: i;
+}
+
+#C10 {
+  grid-area: j;
+}
+
+#C11 {
+  grid-area: k;
+}
+
+#C12 {
+  grid-area: l;
+}
+
+#C13 {
+  grid-area: m;
+}
+
+#C14 {
+  grid-area: n;
+}
+
+@media only screen and (max-width: 1100px) {
+  .category-board-grid {
+    background: purple;
+    grid-template-areas:
+      "a a"
+      "b c"
+      "d e"
+      "f f"
+      "g h"
+      "i i"
+      "j k"
+      "l l"
+      "n m";
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .category-board-grid {
+    background: orange;
+    grid-template-areas:
+      "a a"
+      "b b"
+      "c c"
+      "d d"
+      "e e"
+      "f f"
+      "g g"
+      "h h"
+      "i i"
+      "j j"
+      "k k"
+      "l l"
+      "m m"
+      "n n";
+    max-width: 100%;
+  }
+}
