@@ -1,0 +1,14 @@
+.filter-container {
+  padding: 10px;
+  .btn-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: #e54750;
+    color: #ffffff;
+    border-radius: 5px;
+  }
+}

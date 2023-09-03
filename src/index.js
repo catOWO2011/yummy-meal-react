@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import beefImage from "./assets/img/beef.png";
 import CategoryBoard from "./components/CategoryBoard/CategoryBoard";
+import SearchPanel from "./components/SearchPanel/SearchPanel";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
 function Meal() {
   return (
     <div>
-      <CategoryBoard beefImage={beefImage} />
+      {/* <CategoryBoard beefImage={beefImage} /> */}
+      <SearchPanel />
     </div>
   );
 }
