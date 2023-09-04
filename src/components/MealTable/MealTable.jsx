@@ -1,7 +1,17 @@
 import MealPreview from "../MealPreview/MealPreview";
-import "./MealTable.css";
+import "./MealTable.scss";
 
 export default function MealTable({ panelMeals }) {
-  console.log(panelMeals, " mealtable");
-  return <div className="meal-table-container"></div>;
+  return (
+    <div className="meal-table-container">
+      {panelMeals.map(({ idMeal, strMeal, strMealThumb }) => (
+        <MealPreview
+          key={idMeal}
+          id={idMeal}
+          name={strMeal}
+          imgUrl={strMealThumb}
+        />
+      ))}
+    </div>
+  );
 }

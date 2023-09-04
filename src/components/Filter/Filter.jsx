@@ -67,7 +67,6 @@ export default function Filter({ setPanelMeals }) {
         selectedAreas
       );
     }
-    console.log(mealList, "//", setPanelMeals);
     setPanelMeals(mealList);
   };
 
@@ -148,7 +147,6 @@ export default function Filter({ setPanelMeals }) {
     getIngredients();
     getAreas();
   }, []);
-  // console.log(selectedCategories, "...");
 
   return (
     <div className="filter-container">
