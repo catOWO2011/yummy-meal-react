@@ -1,0 +1,104 @@
+.card-preview-container {
+  display: inline-block;
+  // max-height: 400px;
+  width: 100%;
+
+  .card-preview {
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 0px 22px 24px 0px rgba(46,51,51,0.05);
+    position: relative;
+  
+    .title-container {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(to right, #f3723b, #e54750);
+      padding: 10px;
+      border-radius: 15px;
+      transition: opacity 0.45s ease-in-out;
+      box-shadow: 0 0 0 rgba(229,71,80,0.4);
+      animation: pulseanime 3s infinite;
+  
+      .title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      @keyframes pulseanime {
+        0% {
+            -moz-box-shadow: 0 0 0 0 rgba(229,71,80,0.4);
+            box-shadow: 0 0 0 0 rgba(229,71,80,0.4)
+        }
+    
+        70% {
+            -moz-box-shadow: 0 0 0 10px rgba(229,71,80,0);
+            box-shadow: 0 0 0 10px rgba(229,71,80,0)
+        }
+    
+        100% {
+            -moz-box-shadow: 0 0 0 0 rgba(229,71,80,0);
+            box-shadow: 0 0 0 0 rgba(229,71,80,0)
+        }
+    }
+    }
+  
+    img {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+}
+
+@mixin animation($name, $duration, $timing-function, $delay, $fill-mode) {
+  animation-name: #{$name};
+  animation-duration: #{$duration};
+  animation-timing-function: #{$timing-function};
+  animation-delay: #{$delay};
+  animation-fill-mode: #{$fill-mode};
+}
+
+@mixin transform($value) {
+  transform: $value;
+}
+
+@mixin keyframes($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+.fadeInRight {
+  animation: fadeInRight .5s ease .6s both;
+}
+
+.fadeInLeft {
+  @include animation(fadeInLeft, 1s, ease, .4s, both);
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@include keyframes(fadeInLeft) {
+  from {
+    opacity: 0;
+    @include transform( translate3d(-100%, 0, 0 ));
+  }
+
+  to {
+    opacity: 1;
+    @include transform( translate3d(0, 0, 0 ));
+  }
+}

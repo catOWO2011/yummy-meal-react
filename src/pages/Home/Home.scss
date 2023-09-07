@@ -1,0 +1,22 @@
+.home-container {
+  width: 100%;
+  display: grid;
+  grid-template-areas: 
+  "a a a a"
+  "c c b b"
+  "c c b b";
+  grid-gap: 16px;
+  margin: 0 auto;
+}
+
+#cp-0 {
+  grid-area: a;
+}
+
+#cp-1 {
+  grid-area: b;
+}
+
+#cp-2 {
+  grid-area: c;
+}

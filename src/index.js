@@ -1,12 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import beefImage from "./assets/img/beef.png";
-import CategoryBoard from "./components/CategoryBoard/CategoryBoard";
 import SearchPanel from "./components/SearchPanel/SearchPanel";
+import Navigation from "./pages/Navigation/Navigation";
+import Home from "./pages/Home/Home";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Navigation />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
@@ -30,6 +44,6 @@ function Meal() {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
