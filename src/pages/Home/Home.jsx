@@ -5,20 +5,28 @@ import mealInstructions from "../../assets/img/meal-instructions.avif";
 import CardPreview from "../../components/CardPreview/CardPreview";
 
 const mealCards = [
-  { cardTitle: "Categories", imageUrl: mealCategories },
-  { cardTitle: "Ingredients", imageUrl: mealIngredients },
-  { cardTitle: "Instructions", imageUrl: mealInstructions },
+  {
+    cardTitle: "Categories",
+    imageUrl: mealCategories,
+    linkDestine: "categories",
+  },
+  {
+    cardTitle: "Ingredients",
+    imageUrl: mealIngredients,
+    linkDestine: "ingredients",
+  },
 ];
 
 const Home = () => {
   return (
     <div className="home-container">
-      {mealCards.map(({ cardTitle, imageUrl }, idx) => (
+      {mealCards.map(({ cardTitle, imageUrl, linkDestine }, idx) => (
         <CardPreview
           key={idx}
           id={idx}
           cardTitle={cardTitle}
           imageUrl={imageUrl}
+          linkDestine={linkDestine}
         />
       ))}
     </div>

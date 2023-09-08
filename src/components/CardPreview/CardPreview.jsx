@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./CardPreview.scss";
 
@@ -21,7 +22,7 @@ const useOnScreen = (elementRef) => {
   return isIntersecting;
 };
 
-const CardPreview = ({ id, cardTitle, imageUrl }) => {
+const CardPreview = ({ id, cardTitle, imageUrl, linkDestine }) => {
   const divRef = useRef(null);
   const isVisible = useOnScreen(divRef);
 
@@ -32,7 +33,9 @@ const CardPreview = ({ id, cardTitle, imageUrl }) => {
         ref={divRef}
       >
         <div className="title-container">
-          <span className="title">{cardTitle}</span>
+          <Link className="title" to={linkDestine}>
+            {cardTitle}
+          </Link>
         </div>
         <img src={imageUrl} alt="meal-categories" />
       </div>

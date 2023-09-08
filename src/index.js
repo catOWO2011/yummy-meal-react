@@ -8,6 +8,8 @@ import Header from "./components/Header/Header";
 import SearchPanel from "./components/SearchPanel/SearchPanel";
 import Navigation from "./pages/Navigation/Navigation";
 import Home from "./pages/Home/Home";
+import CatetoryPage from "./pages/CategoryPage/CategoryPage";
+import IngredientPage from "./pages/IngredientPage/IngredientPage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "categories",
+        element: <CatetoryPage />,
+      },
+      {
+        path: "ingredients",
+        element: <IngredientPage />,
       },
     ],
   },

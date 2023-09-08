@@ -2,9 +2,8 @@
   width: 100%;
   display: grid;
   grid-template-areas: 
-  "a a a a"
-  "c c b b"
-  "c c b b";
+  "a a b b"
+  "a a b b";
   grid-gap: 16px;
   margin: 0 auto;
 }
@@ -15,8 +14,4 @@
 
 #cp-1 {
   grid-area: b;
-}
-
-#cp-2 {
-  grid-area: c;
 }
