@@ -8,27 +8,37 @@ export const NavigationContainer = styled.header`
 `;
 
 export const NavigationTitle = styled(Link)`
-  font-size: 32px;
+  font-size: 42px;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   text-decoration: none;
+  color: #ffddb5;
+  font-family: "Merienda";
+  text-shadow: -1px 3px 0px #e54750;
 `;
 
 export const NavigationLinkContainer = styled.nav`
   width: 400px;
-  border: 1px solid red;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   max-width: 90%;
+
+  svg {
+    height: 30px;
+    width: 100%;
+  }
 `;
 
 export const NavigationLink = styled(Link)`
   text-decoration: none;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const LogoContainer = styled.div`

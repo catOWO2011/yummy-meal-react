@@ -1,6 +1,7 @@
 import {
   IngredientCardContainer,
   IngredientImage,
+  IngredientNameContainer,
 } from "./IngredientCard.styles";
 
 export default function IngredientCard({
@@ -9,10 +10,12 @@ export default function IngredientCard({
   description,
   imgUrl,
 }) {
-  console.log(imgUrl);
   return (
     <IngredientCardContainer>
       <IngredientImage $background={imgUrl} />
+      <IngredientNameContainer>
+        <span>{ingredientName}</span>
+      </IngredientNameContainer>
     </IngredientCardContainer>
   );
 }

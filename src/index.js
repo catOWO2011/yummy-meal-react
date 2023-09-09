@@ -10,6 +10,8 @@ import Navigation from "./pages/Navigation/Navigation";
 import Home from "./pages/Home/Home";
 import CatetoryPage from "./pages/CategoryPage/CategoryPage";
 import IngredientPage from "./pages/IngredientPage/IngredientPage";
+import MealPage from "./pages/MealPage/MealPage";
+import { mealsLoader } from "./pages/MealPage/mealsLoader";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: "categories",
         element: <CatetoryPage />,
+      },
+      {
+        path: "categories/:categoryName",
+        element: <MealPage />,
+        loader: mealsLoader,
       },
       {
         path: "ingredients",

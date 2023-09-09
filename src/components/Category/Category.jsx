@@ -20,7 +20,7 @@ export default function Category({ id, name, imgUrl }) {
       <img src={imgUrl} alt={name} />
       {/* <p className="overlay">{name}</p> */}
       <div className="title-container">
-        <Link className="title" to={"/"}>
+        <Link className="title" to={`/categories/${name.toLowerCase()}`}>
           {name}
         </Link>
       </div>

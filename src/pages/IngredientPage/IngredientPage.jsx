@@ -1,9 +1,16 @@
-import { Pagination } from "antd";
+import { Pagination, Spin } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import IngredientCard from "../../components/IngredientCard/IngredientCard";
-import { IngredientDescription } from "../../components/IngredientCard/IngredientCard.styles";
-import { IngredientPageContainer } from "./IngredientPage.styles";
+import {
+  IngredientTitle,
+  TitleContainer,
+} from "../../components/IngredientCard/IngredientCard.styles";
+import {
+  IngredientPageContainer,
+  IngredientSpinContainer,
+  PaginationContainer,
+} from "./IngredientPage.styles";
 
 export default function IngredientPage() {
   const [ingredients, setIngredients] = useState([]);
@@ -38,7 +45,6 @@ export default function IngredientPage() {
     };
 
     getIngredients();
-    console.log("...");
   }, []);
 
   // console.log(ingredients);
@@ -49,26 +55,40 @@ export default function IngredientPage() {
 
   return (
     <>
-      <IngredientPageContainer>
-        {ingredients
-          .filter(
-            (value, index) =>
-              index + 1 >= (startPage - 1) * 10 + 1 &&
-              index + 1 <= startPage * 10
-          )
-          .map(({ id, ingredientName, description, imgUrl }) => (
-            <>
+      <TitleContainer>
+        <IngredientTitle>Ingredients</IngredientTitle>
+      </TitleContainer>
+      {ingredients.length !== 0 && (
+        <IngredientPageContainer>
+          {ingredients
+            .filter(
+              (value, index) =>
+                index + 1 >= (startPage - 1) * 10 + 1 &&
+                index + 1 <= startPage * 10
+            )
+            .map(({ id, ingredientName, description, imgUrl }) => (
               <IngredientCard
                 id={id}
                 key={id}
                 ingredientName={ingredientName}
                 imgUrl={imgUrl}
+                description={description}
               />
-              {/* <IngredientDescription>{description}</IngredientDescription> */}
-            </>
-          ))}
-      </IngredientPageContainer>
-      <Pagination defaultCurrent={1} total={574} onChange={onChangePage} />
+            ))}
+        </IngredientPageContainer>
+      )}
+      {ingredients.length === 0 && (
+        <IngredientSpinContainer>
+          <Spin size="large" />
+        </IngredientSpinContainer>
+      )}
+      <PaginationContainer>
+        <Pagination
+          defaultCurrent={1}
+          total={ingredients.length}
+          onChange={onChangePage}
+        />
+      </PaginationContainer>
     </>
   );
 }

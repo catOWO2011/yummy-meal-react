@@ -1,7 +1,6 @@
 import "./Home.scss";
 import mealCategories from "../../assets/img/meal-categories.jpg";
 import mealIngredients from "../../assets/img/meal-ingredients.avif";
-import mealInstructions from "../../assets/img/meal-instructions.avif";
 import CardPreview from "../../components/CardPreview/CardPreview";
 
 const mealCards = [

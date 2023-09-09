@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./MealPreview.scss";
 
 export default function MealPreview({ id, name, imgUrl }) {
@@ -5,11 +6,11 @@ export default function MealPreview({ id, name, imgUrl }) {
     <div className="meal-preview-container">
       <figure>
         <img src={imgUrl} alt={name} />
-        <a href="/">
+        <Link to={"/"}>
           <div className="meal-title">
             <h3>{name}</h3>
           </div>
-        </a>
+        </Link>
       </figure>
     </div>
   );
