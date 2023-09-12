@@ -15,10 +15,3 @@ export const IngredientSpinContainer = styled.div`
   display: flex;
   padding: 300px;
 `;
-
-export const PaginationContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-`;

@@ -1,15 +1,16 @@
-import { Pagination, Spin } from "antd";
+import { Spin } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import IngredientCard from "../../components/IngredientCard/IngredientCard";
 import {
   IngredientTitle,
   TitleContainer,
 } from "../../components/IngredientCard/IngredientCard.styles";
+import PaginationWrapper from "../../components/PaginationWrapper/PaginationWrapper";
 import {
   IngredientPageContainer,
   IngredientSpinContainer,
-  PaginationContainer,
 } from "./IngredientPage.styles";
 
 export default function IngredientPage() {
@@ -47,8 +48,6 @@ export default function IngredientPage() {
     getIngredients();
   }, []);
 
-  // console.log(ingredients);
-
   const onChangePage = (page) => {
     setStartPage(page);
   };
@@ -82,13 +81,11 @@ export default function IngredientPage() {
           <Spin size="large" />
         </IngredientSpinContainer>
       )}
-      <PaginationContainer>
-        <Pagination
-          defaultCurrent={1}
-          total={ingredients.length}
-          onChange={onChangePage}
-        />
-      </PaginationContainer>
+      <PaginationWrapper
+        defaultCurrent={1}
+        total={ingredients.length}
+        onChange={onChangePage}
+      />
     </>
   );
 }

@@ -4,7 +4,11 @@ import styled from "styled-components";
 export const NavigationContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 64px 0;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 15;
 `;
 
 export const NavigationTitle = styled(Link)`
