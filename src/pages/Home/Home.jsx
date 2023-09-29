@@ -42,11 +42,11 @@ const Home = () => {
           Found Recipes from around the World
           <div className="world-icon"
             style={{
+              borderRadius: "100%",
+              backgroundImage: `url(${world})`,
+              backgroundSize: "cover",
               height: "100px",
               width: "100px",
-              backgroundSize: "230px",
-              borderRadius: "100%",
-              background: `url(${world})`,
               animation: "spin 3.5s infinite linear"
             }}
           ></div>
