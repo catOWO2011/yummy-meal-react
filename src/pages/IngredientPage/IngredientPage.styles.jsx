@@ -6,6 +6,8 @@ export const IngredientPageContainer = styled.div`
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: center;
+  background: #E19898;
+  padding: 20px;
 `;
 
 export const IngredientSpinContainer = styled.div`

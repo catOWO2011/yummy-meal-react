@@ -9,7 +9,7 @@ import {
   NavigationLinkContainer,
   NavigationTitle,
 } from "./Navigation.styles";
-import chefIcon from "../../assets/img/chef.avif";
+import chefIcon from "../../assets/img/chef-icon.png";
 
 export default function Navigation() {
   return (

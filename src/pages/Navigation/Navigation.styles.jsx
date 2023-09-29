@@ -7,7 +7,7 @@ export const NavigationContainer = styled.header`
   padding: 10px 0;
   position: sticky;
   top: 0;
-  background: #fff;
+  background: #FFDCB6;
   z-index: 15;
   border-top: solid 2px #ffddb5;
   border-bottom: solid 2px #ffddb5;
@@ -22,9 +22,9 @@ export const NavigationTitle = styled(Link)`
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  color: #ffddb5;
+  color: #C63D2F;
   font-family: "Merienda";
-  text-shadow: -1px 3px 0px #e54750;
+  text-shadow: -3px 3px 0px #FF9B50 ;
 `;
 
 export const NavigationLinkContainer = styled.nav`
